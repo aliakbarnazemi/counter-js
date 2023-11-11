@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/bootstrap.min.css">
+    <style>
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 300px auto;
+            flex-direction: column;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="center">
+            <h1 style="font-size: 64px;" id="show">0</h1>
+            <div class="container"
+                style="margin: 100px auto;display: flex;justify-content: center;align-items: center;">
+                <button class="btn btn-primary m-2"  onclick="result('+')">+</button>
+                <button class="btn btn-primary m-2"  onclick="result('-')">-</button>
+                <button class="btn btn-primary m-2" onclick="result('reset')">reset</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let flag = 0
+
+        function result(x) {
+            
+            let num =document.getElementById('show')
+
+            if (x == '+') {
+                flag++
+            }
+            else if (x == '-') {
+                flag--
+            }
+            else {
+                flag = 0
+            }
+
+            num.innerHTML = flag
+
+            if(flag < 0){
+                num.style.color='red'
+            }
+
+            else if (flag > 0){
+                num.style.color='green'
+            }
+
+            else{
+                num.style.color='white'
+            }
+
+        }
+
+    </script>
+</body>
+
+</html>
